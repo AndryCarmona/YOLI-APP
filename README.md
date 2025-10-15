@@ -1,2 +1,2 @@
 # YOLI-APP
-Proyecto de aprendizaje báscio de la lengua náhuatl.
+Proyecto de aprendizaje básico de la lengua náhuatl.
