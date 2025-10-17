@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLI-APP - Aprende Nahual</title>
+    <style>
+        :root {
+            --primary-color: #f96094;
+            --secondary-color: #fecdc0;
+            --accent-color: #db7799;
+            --light-color: #fecdc0;
+            --dark-color: #1a1a1a;
+            --text-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-login {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-login:hover {
+            background-color: var(--light-color);
+        }
+        
+        .btn-register {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-register:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .content-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        
+        .history-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .history-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .history-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <!-- Reemplaza con tu imagen de logo -->
+            <img src="img/logo.webp" alt="Logo YOLI-APP" class="logo">
+            <div class="logo-text">YOLI-APP</div>
+        </div>
+        <div class="nav-buttons">
+            <a href="logIn.html" class="btn btn-login">Iniciar Sesión</a>
+            <a href="logIn.html" class="btn btn-register">Registrarse</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>APRENDER ES PARTE DE VIVIR</h1>
+        <p>Descubre la riqueza cultural de la lengua Nahual con YOLI-APP</p>
+    </section>
+
+    <div class="container">
+        <section class="content-section">
+            <div class="history-text">
+                <h2>La Lengua Nahual</h2>
+                <p>El náhuatl es una lengua uto-azteca que se habla principalmente por los nahuas en México y Centroamérica. Surgió por lo menos desde el siglo VII y hoy en día es la lengua indígena con el mayor número de hablantes en México, con aproximadamente 1.7 millones de personas.</p>
+                <p>Esta lengua fue la lingua franca del Imperio Azteca y durante la colonia fue utilizada por los misioneros para la evangelización. El náhuatl ha influido significativamente en el español mexicano, aportando palabras como "chocolate", "tomate", "aguacate" y "coyote".</p>
+                <p>El término "nahual" o "nagual" se refiere a las prácticas mágico-religiosas de los pueblos mesoamericanos, donde ciertos individuos podían transformarse en animales. Este concepto refleja la profunda conexión espiritual entre los seres humanos y la naturaleza en la cosmovisión náhuatl.</p>
+                <p>En YOLI-APP, no solo aprenderás el vocabulario y la gramática del náhuatl, sino que también explorarás la rica cosmovisión y tradiciones de esta cultura milenaria.</p>
+            </div>
+            <div class="history-image">
+                <!-- Reemplaza con tu imagen de la cultura Nahual -->
+                <img src="img/historialogin.jpg" alt="Cultura Nahual">
+            </div>
+        </section>
+
+        <section>
+            <h2>¿Qué ofrece YOLI-APP?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Lecciones Interactivas</h3>
+                    <p>Aprende náhuatl con actividades dinámicas y ejercicios prácticos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎧</div>
+                    <h3>Audio Nativo</h3>
+                    <p>Escucha la pronunciación correcta de hablantes nativos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏺</div>
+                    <h3>Cultura Viva</h3>
+                    <p>Descubre las tradiciones, mitos y costumbres nahuas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Aprendizaje Móvil</h3>
+                    <p>Accede a tus lecciones desde cualquier dispositivo.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>YOLI-APP &copy; 2023 - Aprende la lengua Nahual</p>
+        <p>Contacto: info@yoliapp.com</p>
+    </footer>
+</body>
+</html>
