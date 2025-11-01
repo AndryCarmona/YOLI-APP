@@ -1,0 +1,17 @@
+<div class="cabecera">
+  <h1>YOLI-CHAT</h1>
+  <button type="button" class="regresar">Regresar a módulos</button>
+</div>
+<div class="chat-container">
+  <div class="chat-box">
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+      {{ msg.text }}
+    </div>
+  </div>
+
+  <form (ngSubmit)="sendMessage()" class="input-area">
+    <input [(ngModel)]="userInput" name="message" placeholder="Preguntale algo a Yoli..." required />
+    <button type="submit">➤</button>
+  </form>
+</div>
+

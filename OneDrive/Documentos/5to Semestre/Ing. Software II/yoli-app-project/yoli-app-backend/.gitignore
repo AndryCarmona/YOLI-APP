@@ -1,0 +1,39 @@
+# ------------------------------------
+# 1. SEGURIDAD - ARCHIVOS SENSIBLES (CRÍTICO)
+# ------------------------------------
+# NUNCA subir la clave de Gemini o cualquier otra credencial.
+.env
+
+# ------------------------------------
+# 2. ENTORNO VIRTUAL DE PYTHON (venv)
+# ------------------------------------
+# Ignorar el entorno virtual completo, ya que se puede recrear con pip install -r requirements.txt
+venv/
+
+# ------------------------------------
+# 3. ARCHIVOS DE PYTHON GENERADOS
+# ------------------------------------
+# Ignorar archivos de caché y compilación
+__pycache__/
+*.pyc
+
+# Ignorar base de datos de desarrollo de Django (si usas SQLite)
+db.sqlite3
+
+# Ignorar el archivo de migración de la app principal de Django si se usa
+# Si tienes una carpeta de la app llamada 'nahuatl_app', el path sería:
+# nahuatl_app/migrations/0001_initial.py 
+# Es mejor no ignorar las migraciones, pero sí los archivos de caché.
+
+# ------------------------------------
+# 4. Configuración del Servidor y Sesiones (Django)
+# ------------------------------------
+# Archivos de sesión generados por Django (importante para mantener el historial de chat)
+*.sess
+*.sessions
+
+# ------------------------------------
+# 5. Herramientas de Desarrollo (Opcional pero Recomendado)
+# ------------------------------------
+# Ignorar la carpeta de VS Code (configuraciones de usuario/espacio de trabajo)
+.vscode/

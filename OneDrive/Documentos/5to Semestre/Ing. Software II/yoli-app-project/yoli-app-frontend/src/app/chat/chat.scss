@@ -1,0 +1,137 @@
+/* Contenedor principal */
+.chat-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #f96094;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.cabecera {
+  /* Habilita Flexbox */
+  display: flex;
+  /* Distribuye el espacio para empujar los elementos a los extremos */
+  justify-content: space-between;
+  /* Asegura que ocupe todo el ancho de la pantalla */
+  width: 100%;
+  /* Alinea verticalmente los elementos al centro */
+  align-items: center;
+  /* Añade un poco de relleno superior e inferior para el espaciado visual */
+  padding: 10px 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: white;
+}
+
+.cabecera h1 {
+  color: #f96094;
+  /* Mantiene el relleno izquierdo original */
+  padding-left: 50px;
+  /* Añade una línea vertical (borde derecho) */
+  border-right: 2px solid #f96094; /* Puedes ajustar el color y grosor de la línea */
+  /* Añade espacio entre el texto y la línea */
+  padding-right: 15px;
+  /* Asegura que el h1 esté centrado verticalmente si hay otros elementos */
+  margin: 0;
+}
+
+/* Estilos para el botón "Regresar a módulos" */
+.cabecera button {
+  /* Mueve el botón al extremo derecho */
+  margin-right: 20px;
+  /* Asegúrate de que el botón no tenga márgenes no deseados */
+  margin-left: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #f96094;
+}
+
+.chat-box {
+  height: 400px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+/* Mensajes */
+.user, .bot {
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin: 5px 0;
+  display: inline-block;
+  max-width: 80%;
+}
+
+.user {
+  text-align: right;
+  color: white;
+  background-color: #f96094;
+  align-self: flex-end;
+  float: right;
+  clear: both;
+}
+
+.bot {
+  text-align: left;
+  color: black;
+  background-color: #fecdc0;
+  align-self: flex-start;
+  float: left;
+  clear: both;
+}
+
+/* Animación de los tres puntos */
+.typing-indicator {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background-color: #f96094;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.2; }
+  40% { opacity: 1; }
+}
+
+/* Input */
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #fecdc0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

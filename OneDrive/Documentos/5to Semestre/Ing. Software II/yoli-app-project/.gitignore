@@ -1,0 +1,22 @@
+# ----------------------------------------
+# General: archivos temporales del sistema
+# ----------------------------------------
+.DS_Store
+*.pyc
+
+# ----------------------------------------
+# Para Django (en la carpeta 'backend/')
+# ----------------------------------------
+/yoli-app-backend/__pycache__/
+/yoli-app-backend/db.sqlite3
+/yoli-app-backend/media/
+/yoli-app-backend/venv/ 
+# Puedes incluir más si tu proyecto lo necesita
+
+# ----------------------------------------
+# Para Angular (en la carpeta 'frontend/')
+# ----------------------------------------
+/PROYEC INGS/node_modules/
+/PROYEC INGS/dist/
+/PROYEC INGS/.angular/
+/PROYEC INGS/npm-debug.log*
