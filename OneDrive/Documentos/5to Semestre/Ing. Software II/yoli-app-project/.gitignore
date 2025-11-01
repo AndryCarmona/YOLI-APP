@@ -20,3 +20,7 @@
 /PROYEC INGS/dist/
 /PROYEC INGS/.angular/
 /PROYEC INGS/npm-debug.log*
+# Ignorar subproyectos que no deberían ser submódulos
+PROYEC INGS/
+PROYEC INGS/YOLI_APP_webapp/
+PROYEC INGS/YOLI-APP/

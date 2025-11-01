@@ -1,0 +1,36 @@
+<div class="modulos-container">
+  <div class="page-title">
+    <h1>Módulos de Aprendizaje</h1>
+    <p>Selecciona un módulo para comenzar tu aprendizaje</p>
+    <br>
+    <p>Puedes acceder a nuestro YOLI-CHAT para realizarle cualquier pregunta si tienes alguna duda,
+      solo dale click al botón que se encuentra en la parte inferior derecha en el icono de 🤖</p>
+  </div>
+
+  <div class="modules-grid">
+    <div *ngFor="let module of modules$ | async"
+         class="module-card"
+         (click)="startModule(module.id)">
+
+      <div class="module-icon">{{ module.icon }}</div>
+
+      <h2>{{ module.title }}</h2>
+      <p>{{ module.description }}</p>
+
+      <div class="module-info">
+        <span>⏱️ {{ module.duration }}</span>
+        <span>📚 {{ module.lessons.length }} lecciones</span>
+      </div>
+
+      <div class="progress-indicator">
+        <div class="progress-bar" [style.width.%]="module.progress"></div>
+      </div>
+
+      <span class="progress-text">{{ module.progress }}% completado</span>
+    </div>
+  </div>
+
+  <button class="chat-button" (click)="openChat()">
+    🤖
+  </button>
+</div>

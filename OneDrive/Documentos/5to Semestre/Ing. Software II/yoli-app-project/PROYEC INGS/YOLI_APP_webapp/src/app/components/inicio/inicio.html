@@ -1,0 +1,31 @@
+<section class="hero">
+  <h1>APRENDER ES PARTE DE VIVIR</h1>
+  <p>Descubre la riqueza cultural de la lengua Nahual con YOLI-APP</p>
+</section>
+
+<div class="container">
+  <section class="content-section">
+    <div class="history-text">
+      <h2>La Lengua Nahual</h2>
+      <p>El náhuatl es una lengua uto-azteca que se habla principalmente por los nahuas en México y Centroamérica. Surgió por lo menos desde el siglo VII y hoy en día es la lengua indígena con el mayor número de hablantes en México, con aproximadamente 1.7 millones de personas.</p>
+      <p>Esta lengua fue la lingua franca del Imperio Azteca y durante la colonia fue utilizada por los misioneros para la evangelización. El náhuatl ha influido significativamente en el español mexicano, aportando palabras como "chocolate", "tomate", "aguacate" y "coyote".</p>
+      <p>El término "nahual" o "nagual" se refiere a las prácticas mágico-religiosas de los pueblos mesoamericanos, donde ciertos individuos podían transformarse en animales. Este concepto refleja la profunda conexión espiritual entre los seres humanos y la naturaleza en la cosmovisión náhuatl.</p>
+      <p>En YOLI-APP, no solo aprenderás el vocabulario y la gramática del náhuatl, sino que también explorarás la rica cosmovisión y tradiciones de esta cultura milenaria.</p>
+    </div>
+    <div class="history-image">
+      <img src="img\historialogin.jpg" alt="Cultura Nahual">
+    </div>
+  </section>
+
+  <section>
+    <h2>¿Qué ofrece YOLI-APP?</h2>
+    <div class="features">
+      <div class="feature-card" *ngFor="let feature of features; let i = index"
+           [style.animation-delay]="(i * 0.1) + 's'">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </section>
+</div>

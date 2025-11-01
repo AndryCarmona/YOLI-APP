@@ -1,0 +1,191 @@
+/* Contenedor Principal */
+.lecciones-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Títulos */
+.page-title {
+  margin-bottom: 40px;
+}
+.page-title h1 {
+  color: #f96094; /* Color de tu marca Yoli */
+}
+
+/* Contenedor de Ejercicios */
+.ejercicios-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Tarjeta de Ejercicio */
+.ejercicio-card {
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ejercicio-card h2 {
+  color: #555;
+  margin-top: 0;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 10px;
+}
+
+.pregunta-box p {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Opciones de Radio */
+.opcion-radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.opcion-radio:hover:not(.correct):not(.incorrect) {
+  background-color: #fff0f5; /* Un hover suave */
+}
+
+.opcion-radio input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #f96094; /* Color del radio button */
+}
+
+/* Estado: Seleccionada */
+.opcion-radio.selected {
+  border-color: #f96094;
+  background-color: #fff0f5;
+}
+
+/* Estado: Respuesta Correcta (después de revisar) */
+.opcion-radio.correct {
+  background-color: #e6ffed; /* Fondo verde claro */
+  border-color: #4CAF50; /* Borde verde */
+  font-weight: bold;
+}
+
+/* Estado: Respuesta Incorrecta (después de revisar) */
+.opcion-radio.incorrect {
+  background-color: #ffe6e6; /* Fondo rojo claro */
+  border-color: #F44336; /* Borde rojo */
+}
+
+/* Botón Comprobar */
+.comprobar-button {
+  background-color: #f96094;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.comprobar-button:disabled {
+  background-color: #ffb3c1;
+  cursor: not-allowed;
+}
+
+/* --- ESTILOS DE RETROALIMENTACIÓN (FEEDBACK) --- */
+.feedback-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-correcta {
+  background-color: #4CAF50; /* Verde sólido */
+  color: white;
+}
+
+.feedback-incorrecta {
+  background-color: #F44336; /* Rojo sólido */
+  color: white;
+}
+
+.feedback-box .resultado {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.feedback-box .explicacion {
+  margin: 0;
+  font-style: italic;
+}
+
+/* Botones de Navegación */
+.botones-navegacion {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.chat-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(249, 96, 148, 0.4);
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.chat-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(249, 96, 148, 0.5);
+}
+
+.start-button {
+  margin-top: 30px;
+  margin-right: 10px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(249, 96, 148, 0.4);
+}
+
+.intro-content {
+    /* 1. Contenedor principal */
+    background-color: white;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave para que destaque */
+    padding: 25px; /* Espaciado interior */
+    margin-bottom: 30px; /* Separación de la sección de preguntas */
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    font-size: 1.05rem;
+}
+
+
+

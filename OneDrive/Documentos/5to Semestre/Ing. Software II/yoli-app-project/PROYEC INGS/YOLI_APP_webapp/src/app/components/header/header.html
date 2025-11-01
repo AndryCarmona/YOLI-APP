@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="logo-container" (click)="navigateToHome()">
+    <img src="img/logo.webp" alt="Logo YOLI-APP" class="logo">
+    <div class="logo-text">YOLI-APP</div>
+  </div>
+
+  <div class="nav-buttons" *ngIf="showAuthButtons">
+    <button class="btn btn-login" (click)="navigateToAuth()">Iniciar Sesión</button>
+    <button class="btn btn-register" (click)="navigateToAuth()">Registrarse</button>
+  </div>
+
+  <div class="nav-buttons" *ngIf="!showAuthButtons">
+    <button class="btn btn-back" (click)="navigateToHome()">← Volver al Inicio</button>
+  </div>
+</header>

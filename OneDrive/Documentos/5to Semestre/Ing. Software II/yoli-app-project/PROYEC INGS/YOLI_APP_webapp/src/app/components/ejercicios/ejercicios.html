@@ -1,0 +1,72 @@
+<div class="lecciones-container">
+  <div class="page-title">
+    <h1>{{ excerciseTitle }}</h1>
+    <p>¡Practica tu conocimiento de Náhuatl completando los siguientes ejercicios!</p>
+  </div>
+
+  <div class="intro-content" [innerHTML]="informacion"></div>
+
+  <div class="ejercicios-grid">
+    <div *ngFor="let pregunta of preguntas; let i = index" class="ejercicio-card">
+
+      <h2>{{ pregunta.titulo }}</h2>
+
+      <div class="pregunta-box">
+        <h3>Pregunta {{ i + 1 }}:</h3>
+        <p>{{ pregunta.texto }}</p>
+      </div>
+
+      <div class="opciones">
+        <label *ngFor="let opcion of pregunta.opciones; let j = index"
+               class="opcion-radio"
+               [ngClass]="{
+                  'selected': pregunta.respuestaSeleccionada === opcion.id,
+                  'correct': pregunta.revisado && opcion.id === pregunta.respuestaCorrectaId,
+                  'incorrect': pregunta.revisado && opcion.id === pregunta.respuestaSeleccionada && opcion.id !== pregunta.respuestaCorrectaId
+               }">
+
+          <input type="radio"
+                 [name]="'pregunta-' + i"
+                 [value]="opcion.id"
+                 [checked]="pregunta.respuestaSeleccionada === opcion.id"
+                 (change)="seleccionarRespuesta(i, opcion.id)"
+                 [disabled]="pregunta.revisado">
+
+          {{ opcion.texto }}
+        </label>
+      </div>
+
+      <button *ngIf="!pregunta.revisado"
+              class="comprobar-button"
+              [disabled]="pregunta.respuestaSeleccionada === null"
+              (click)="revisarRespuesta(i)">
+        Comprobar Respuesta
+      </button>
+
+      <div *ngIf="pregunta.revisado"
+           class="feedback-box"
+           [ngClass]="{'feedback-correcta': pregunta.esCorrecta, 'feedback-incorrecta': !pregunta.esCorrecta}">
+
+        <p class="resultado">
+          <span *ngIf="pregunta.esCorrecta">✅ ¡Respuesta Correcta!</span>
+          <span *ngIf="!pregunta.esCorrecta">❌ La respuesta ha sido incorrecta.</span>
+        </p>
+
+        <p class="explicacion">
+          **Explicación:** {{ pregunta.explicacion }}
+        </p>
+      </div>
+
+      <hr> </div>
+  </div>
+
+  <button class="start-button" (click)="markCompletedAndGoBack()">
+    ✅ Marcar como Completado
+  </button>
+
+  <button class="start-button" (click)="volver()">← Volver a las lecciones</button>
+
+   <button class="chat-button" (click)="openChat()">
+    🤖
+  </button>
+</div>

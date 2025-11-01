@@ -1,0 +1,47 @@
+<div class="lecciones-container">
+  <div class="page-title">
+    <h1>Lecciones del módulo: {{ moduleId }}</h1>
+    <p>Completa las lecciones para avanzar en tu aprendizaje</p>
+  </div>
+
+  <div class="lessons-grid">
+    <div *ngFor="let lesson of lessons; let i = index"
+          class="lesson-card"
+          [class.completed]="lesson.completed"
+          [style.animation-delay]="(i * 0.1) + 's'">
+
+      <h2>{{ lesson.title }}</h2>
+
+      <div class="progress-indicator">
+        <div class="progress-bar" [style.width.%]="lesson.progress"></div>
+      </div>
+
+      <div class="lesson-status">
+        <span *ngIf="lesson.completed">✅ Completada</span>
+        <span *ngIf="!lesson.completed">⏳ En progreso</span>
+      </div>
+
+      <div class="lesson-actions">
+
+        <button *ngIf="lesson.exercises?.length"
+                class="start-button exercise-button"
+                (click)="goToExercise(lesson)">
+          📚 Realizar Ejercicios
+        </button>
+
+<!--        <button class="start-button toggle-button"
+                (click)="toggleProgress(lesson)">
+          Marcar {{ lesson.completed ? 'pendiente' : 'completa' }}
+        </button>
+-->
+      </div>
+      </div>
+  </div>
+
+  <div class="general-actions">
+    <button class="start-button" (click)="volver()">← Volver a módulos</button>
+    <button class="chat-button" (click)="openChat()">
+      🤖
+    </button>
+  </div>
+</div>

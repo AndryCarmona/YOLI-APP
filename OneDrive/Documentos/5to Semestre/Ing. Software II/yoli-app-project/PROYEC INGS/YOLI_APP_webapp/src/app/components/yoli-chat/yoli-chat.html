@@ -1,0 +1,32 @@
+<div class="cabecera">
+  <h1>YOLI-CHAT</h1>
+  <button class="start-button" (click)="volver()">← Volver a módulos</button>
+</div>
+
+<div class="contenido-principal">
+
+  <div class="instrucciones">
+    <h2>Instrucciones</h2>
+    <ul>
+      <li>Preguntale lo que desees a Yoli-Chat pero recuerda que debe ser en español tu petición.</li>
+      <li>Presiona el botón "Regresar" para volver a la lista de módulos.</li>
+      <li>Escribe tu pregunta en el área de texto y presiona "➤".</li>
+      <li>Yoli-Chat te responderá automáticamente.</li>
+    </ul>
+  </div>
+
+  <div class="chat-bot-area">
+    <div class="chat-container">
+      <div class="chat-box">
+        <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+          {{ msg.text }}
+        </div>
+      </div>
+      <form (ngSubmit)="sendMessage()" class="input-area">
+        <input [(ngModel)]="userInput" name="message" placeholder="Preguntale algo a Yoli..." required />
+        <button type="submit">➤</button>
+      </form>
+    </div>
+  </div>
+
+</div>
